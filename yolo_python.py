@@ -7,7 +7,7 @@ from threading import Thread
 
 # handle command line arguments
 ap = argparse.ArgumentParser()
-#ap.add_argument('-i', '--image', required=True,
+#ap.add_argument('-i', '--image', required=True,  //remove comment if you want to change code for manualy scan an image to detect objects
  #               help = 'path to input image')
 ap.add_argument('-c', '--config', required=True,
                 help = 'path to yolo config file')
@@ -18,7 +18,7 @@ ap.add_argument('-cl', '--classes', required=True,
 args = ap.parse_args()
 
 
-class VideoStream:
+class VideoStream:  #remove this class if you want to change code for manualy scan an image to detect objects
 	
 	def __init__(self, src=0):
 		self.stream = cv2.VideoCapture(src)
@@ -63,9 +63,9 @@ def draw_box(img,class_id,confidence,x,y,w,h):
 	cv2.putText(img,label,(x-10,y-10),cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
 
-vs = VideoStream(src=0).start()
-frame_count = 0
-while True:
+vs = VideoStream(src=0).start()  #replace this line with image = cv2.imread(args.image)
+frame_count = 0  
+while True:  #remove while condition if you want to change code for manualy scan an image to detect objects
 	image = vs.read()
 	frame_count+=1
 
@@ -149,7 +149,9 @@ while True:
 			break
 
 #save output 
-#cv2.imwrite("detected.jpg",image)
+#cv2.imwrite("object-detection.jpg", image)  //remove comment if you want to change code for manualy scan an image to detect objects
+#show output
+#cv2.imwrite("detected.jpg",image)  //remove comment if you want to change code for manualy scan an image to detect objects
 vs.stop()
 #preparing input
 #release resourses

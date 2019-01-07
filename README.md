@@ -1,6 +1,6 @@
 created by Uday Soni on 05/01/2019
 
-This pythonn script uses some libararis.
+This pythonn script uses some libararies.
 1. OpenCv
 2. numpy
 
@@ -9,13 +9,13 @@ other import libaries used are by default in python. So , dont worry about them.
 
 download the yolov3.weights here.
 
-https://pjreddie.com/media/files/yolov3.weights`
+https://pjreddie.com/media/files/yolov3.weights
 
-You can run the script by this command.
+You can run the script with this command.
 
 > python yolo_python.py  --config yolov3.cfg  --weights yolov3.weights  --classes yolov3.txt
 
-This code is wriiten to take realtime camera feed and detect objects.
+This code is written to take realtime camera feed and detect objects.
 
 You can edit this file to run on image(saved on computer, not webcam feed).
 
